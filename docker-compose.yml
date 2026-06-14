@@ -1,0 +1,15 @@
+# CouchDB for Obsidian Self-hosted LiveSync.
+# SHARED-VM SAFETY: the host port is bound to BIND_ADDR (the VM's Tailscale IP), never 0.0.0.0,
+# so CouchDB is unreachable from the public internet regardless of the VM's firewall rules.
+name: obs-sync
+services:
+  couchdb:
+    image: couchdb:3
+    container_name: obsidian-couchdb
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/opt/couchdb/data
+      - ./couchdb/local.ini:/opt/couchdb/etc/local.d/local.ini
+    ports:
+      - "${BIND_ADDR:-127.0.0.1}:${COUCHDB_PORT:-5984}:5984"

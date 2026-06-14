@@ -1,0 +1,5 @@
+# Secrets
+.env
+
+# CouchDB data (the live database — back this up, don't commit it)
+data/

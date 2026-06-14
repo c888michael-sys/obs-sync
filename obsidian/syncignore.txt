@@ -1,0 +1,18 @@
+# Copy this file into your Obsidian VAULT root and rename it to `.syncignore`
+# (the leading dot matters). Then in the Self-hosted LiveSync plugin enable
+# "use ignore files" and point it at .syncignore.
+#
+# Attachments are excluded from sync for now. To start syncing a type again,
+# delete its line and LiveSync will do a one-time bulk upload of those files.
+
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.bmp
+*.svg
+*.pdf
+*.mp4
+*.mov
+*.mp3
